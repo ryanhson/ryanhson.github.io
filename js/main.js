@@ -63,7 +63,7 @@
       <article class="card" data-areas="${p.areas.join(" ")}" data-skills="${p.skills.map(slug).join(" ")}">
         <div class="media-ph">Thumbnail: ${p.title}</div>
         <div class="card-body">
-          <div class="card-meta">${p.date} · ${EXPERIENCE[p.experience].label} ${status}</div>
+          <div class="card-meta">${p.date} · ${p.context} ${status}</div>
           <h3><a href="${projectUrl(p)}">${p.title}</a></h3>
           <p>${p.summary}</p>
           ${tagList(p.skills)}
@@ -179,11 +179,13 @@
       AREAS.map((a) => `<button class="filter-btn" type="button" data-area="${a.id}">${a.label}</button>`).join("");
 
     const more = document.getElementById("more-projects");
-    if (more) {
+    if (more && !MORE_PROJECTS.length) {
+      more.closest("section")?.remove();
+    } else if (more) {
       more.innerHTML = MORE_PROJECTS.map((m) => `
         <li><strong>${m.title}</strong>
           <span class="card-meta">${m.date}</span>
-          <p class="muted" style="margin:.3em 0 0">${m.summary} <a href="${ROOT}${m.link}">See on the Experience page →</a></p>
+          <p class="muted" style="margin:.3em 0 0">${m.summary}${m.link ? ` <a href="${ROOT}${m.link}">Learn more →</a>` : ""}</p>
         </li>`).join("");
     }
 
@@ -255,7 +257,8 @@
     const i = PROJECTS.findIndex((p) => p.id === id);
     if (i === -1) return;
     const p = PROJECTS[i];
-    const exp = EXPERIENCE[p.experience];
+    const exp = EXPERIENCE[p.experience];   // undefined for non-work projects
+    const expUrl = exp ? `${ROOT}experience.html#${p.experience}` : "";
 
     // Breadcrumbs
     const crumbs = document.getElementById("breadcrumbs");
@@ -268,7 +271,7 @@
 
     // Meta line under the title
     const meta = document.getElementById("project-meta");
-    if (meta) meta.textContent = `${exp.label} · ${p.date}${p.status ? " · " + p.status : ""}`;
+    if (meta) meta.textContent = `${p.context} · ${p.date}${p.status ? " · " + p.status : ""}`;
 
     // "At a glance" sidebar
     const glance = document.getElementById("glance");
@@ -279,7 +282,7 @@
           <div><dt>Key result</dt><dd class="key-result">${p.keyResult}</dd></div>
           <div><dt>Role</dt><dd>${p.role}</dd></div>
           <div><dt>When</dt><dd>${p.date}</dd></div>
-          <div><dt>Context</dt><dd><a href="${ROOT}experience.html#${p.experience}">${exp.label}</a></dd></div>
+          <div><dt>Context</dt><dd>${exp ? `<a href="${expUrl}">${p.context}</a>` : p.context}</dd></div>
           <div><dt>Focus area</dt><dd>${p.areas.map((a) => `<a href="${ROOT}projects.html?area=${a}">${areaLabel(a)}</a>`).join(", ")}</dd></div>
           <div><dt>Tools &amp; skills</dt><dd>${tagList(p.skills)}</dd></div>
         </dl>`;
@@ -298,7 +301,7 @@
           o,
           score: o.skills.filter((s) => p.skills.includes(s)).length * 2 +
                  o.areas.filter((a) => p.areas.includes(a)).length +
-                 (o.experience === p.experience ? 1 : 0),
+                 (p.experience && o.experience === p.experience ? 1 : 0),
         }))
         .filter((r) => r.score > 0)
         .sort((a, b) => b.score - a.score)
@@ -314,7 +317,7 @@
         </div>
         <div class="next-grid">
           ${related.map((r) => nextLink("Related project", r.title, projectUrl(r))).join("")}
-          ${nextLink("Where this happened", exp.label, `${ROOT}experience.html#${p.experience}`)}
+          ${exp ? nextLink("Where this happened", exp.label, expUrl) : ""}
           ${p.skills[0] ? nextLink("More with " + p.skills[0], "See all " + p.skills[0] + " projects", skillUrl(p.skills[0])) : ""}
           ${nextLink("Back to the hub", "All projects", `${ROOT}projects.html`)}
           ${nextLink("Like what you see?", "Get in touch", `${ROOT}contact.html`)}
