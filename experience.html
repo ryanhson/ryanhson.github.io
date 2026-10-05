@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Experience · Ryan Henderson</title>
+  <meta name="description" content="Internships, research, and education of Ryan Henderson, Electrical Engineering student at the University of Delaware.">
+  <script>try{var t=localStorage.getItem("theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="js/data.js" defer></script>
+  <script src="js/main.js" defer></script>
+</head>
+<body data-page="experience" data-root="">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header id="site-header"></header>
+
+  <main id="main">
+    <div class="container">
+      <header class="page-header">
+        <p class="eyebrow">Experience</p>
+        <h1>Where I've worked</h1>
+        <p class="lead">Newest first. Click any entry to expand it and see the projects from that role.</p>
+      </header>
+
+      <div class="timeline-controls">
+        <button class="filter-btn" type="button" id="expand-all">Expand all</button>
+        <button class="filter-btn" type="button" id="collapse-all">Collapse all</button>
+      </div>
+
+      <!-- Each <li id="..."> matches an `experience` key in js/data.js.
+           Project links inside [data-exp-projects] are filled in automatically. -->
+      <ol class="timeline">
+        <li id="senior">
+          <details>
+            <summary>
+              <h3>Senior Design</h3>
+              <span class="when">Aug 2026 – Present</span>
+              <span class="role">University of Delaware · Newark, DE</span>
+            </summary>
+            <div class="details-body">
+              <ul>
+                <li>Developing an AI-assisted design workflow for 3D-printed electronics that generates printable electronic geometries from user-defined design requirements.</li>
+              </ul>
+              <div class="exp-projects"><h4>Project</h4><ul data-exp-projects="senior"></ul></div>
+            </div>
+          </details>
+        </li>
+
+        <li id="siemens">
+          <details>
+            <summary>
+              <h3>Siemens Healthineers</h3>
+              <span class="when">Jun – Aug 2026</span>
+              <span class="role">Electrical Engineering Intern · Tarrytown, NY</span>
+            </summary>
+            <div class="details-body">
+              <ul>
+                <li>Developed a C# application that interfaces with a USB-to-I²C bridge to automate EEPROM serialization of PCAs, with read-back verification, page-aware writes, ACK polling, and production traceability.</li>
+                <li>Validated and debugged I²C EEPROM communication with a Saleae logic analyzer, resolving device addressing, write-cycle timing, page boundary, and hardware/software integration issues.</li>
+                <li>Built a Python BOM availability tool using Playwright and openpyxl that checks component stock across approved distributors and generates color-coded sourcing reports.</li>
+              </ul>
+              <div class="exp-projects"><h4>Projects from this role</h4><ul data-exp-projects="siemens"></ul></div>
+            </div>
+          </details>
+        </li>
+
+        <li id="research">
+          <details>
+            <summary>
+              <h3>UD Electrical &amp; Computer Engineering</h3>
+              <span class="when">Jun – Aug 2025</span>
+              <span class="role">Undergraduate Researcher · Newark, DE</span>
+            </summary>
+            <div class="details-body">
+              <ul>
+                <li>Implemented an open-source pipeline for RTL-to-GDSII chip design, gate-level netlist activity simulation, dynamic power tracing, and side-channel analysis.</li>
+                <li>Optimized Python scripts that simulate the dynamic power consumption of cryptographic hardware, improving Pearson correlation coefficients in later correlation power analysis.</li>
+                <li>Ran the open-source flow in 16 hours, compared with 24 hours for commercial flows.</li>
+                <li>Extended analysis beyond gate level with layout-level data for more accurate power simulation and side-channel evaluation.</li>
+              </ul>
+              <div class="exp-projects"><h4>Project from this role</h4><ul data-exp-projects="research"></ul></div>
+            </div>
+          </details>
+        </li>
+
+        <li id="vip">
+          <details>
+            <summary>
+              <h3>Vehicle-to-Grid Embedded Systems (VIP)</h3>
+              <span class="when">Sep – Dec 2024</span>
+              <span class="role">Vertically Integrated Projects team · Newark, DE</span>
+            </summary>
+            <div class="details-body">
+              <ul>
+                <li>Soldered and debugged hardware before integration into smart electric vehicle chargers.</li>
+                <li>Gained hands-on experience with integrated circuits and embedded systems, connecting coursework to real-world applications.</li>
+              </ul>
+            </div>
+          </details>
+        </li>
+
+        <li id="psi">
+          <details>
+            <summary>
+              <h3>Phase Sensitive Innovations</h3>
+              <span class="when">Jan 2024; Jun – Aug 2024</span>
+              <span class="role">Electrical Engineering Intern · Newark, DE</span>
+            </summary>
+            <div class="details-body">
+              <ul>
+                <li>Soldered, cleaned, and flattened PCBs for integration into RF antenna arrays.</li>
+                <li>Operated wire bonders on PCBs and performed integrity testing to ensure reliable connections.</li>
+                <li>Wrote and revised technical documents on lab equipment operation and standardized procedures.</li>
+              </ul>
+            </div>
+          </details>
+        </li>
+
+        <li id="coursework">
+          <details>
+            <summary>
+              <h3>University of Delaware, Honors College</h3>
+              <span class="when">2023 – May 2027</span>
+              <span class="role">Bachelor of Electrical Engineering · GPA 3.89 · Dean's List, Fall 2023 – Spring 2026</span>
+            </summary>
+            <div class="details-body">
+              <p class="muted">Course projects:</p>
+              <div class="exp-projects"><h4>Projects</h4><ul data-exp-projects="coursework"></ul></div>
+            </div>
+          </details>
+        </li>
+      </ol>
+
+      <section class="next-steps">
+        <h2>Where to next?</h2>
+        <div class="next-grid">
+          <a class="next-link" href="projects.html"><small>See the work</small><span>All projects</span></a>
+          <a class="next-link" href="skills.html"><small>What I can do</small><span>Skills</span></a>
+          <a class="next-link" href="assets/resume.pdf" target="_blank" rel="noopener"><small>One page</small><span>Download resume</span></a>
+          <a class="next-link" href="contact.html"><small>Let's talk</small><span>Get in touch</span></a>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer id="site-footer"></footer>
+</body>
+</html>

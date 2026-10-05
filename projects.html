@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Projects · Ryan Henderson</title>
+  <meta name="description" content="Projects by Ryan Henderson in chip design, semiconductor fabrication, embedded systems, and test automation.">
+  <script>try{var t=localStorage.getItem("theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="js/data.js" defer></script>
+  <script src="js/main.js" defer></script>
+</head>
+<body data-page="projects" data-root="">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header id="site-header"></header>
+
+  <main id="main">
+    <div class="container">
+      <header class="page-header">
+        <p class="eyebrow">Projects</p>
+        <h1>What I've built</h1>
+        <p class="lead">Select a topic to narrow the list, or click any skill tag to see every project that uses it.</p>
+      </header>
+
+      <div class="filters" id="area-filters" role="group" aria-label="Filter by focus area"></div>
+      <div class="active-filter" id="active-filter" hidden></div>
+      <p class="result-count" id="result-count" aria-live="polite"></p>
+
+      <div class="grid" id="project-grid"></div>
+      <div class="empty-state" id="empty-state" hidden>
+        <p>No projects match this combination.</p>
+        <button class="btn btn-outline" type="button">Show all projects</button>
+      </div>
+
+      <noscript><p class="todo">Turn on JavaScript to see the project gallery.</p></noscript>
+
+      <section class="section">
+        <h2>More projects</h2>
+        <ul class="compact-list" id="more-projects"></ul>
+      </section>
+
+      <section class="next-steps">
+        <h2>Where to next?</h2>
+        <div class="next-grid">
+          <a class="next-link" href="experience.html"><small>See the context</small><span>Experience timeline</span></a>
+          <a class="next-link" href="skills.html"><small>Browse differently</small><span>Explore by skill</span></a>
+          <a class="next-link" href="contact.html"><small>Like what you see?</small><span>Get in touch</span></a>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer id="site-footer"></footer>
+</body>
+</html>

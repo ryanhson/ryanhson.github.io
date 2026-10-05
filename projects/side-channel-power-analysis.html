@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Side-Channel Power Analysis Pipeline · Ryan Henderson</title>
+  <meta name="description" content="An open-source RTL-to-GDSII flow with dynamic power simulation for side-channel analysis of cryptographic hardware.">
+  <script>try{var t=localStorage.getItem("theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/styles.css">
+  <script src="../js/data.js" defer></script>
+  <script src="../js/main.js" defer></script>
+</head>
+<body data-page="project" data-root="../" data-project="side-channel-power-analysis">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header id="site-header"></header>
+
+  <main id="main">
+    <div class="container">
+      <nav class="breadcrumbs" id="breadcrumbs" aria-label="Breadcrumb"></nav>
+
+      <div class="project-hero">
+        <div>
+          <h1>Side-Channel Power Analysis Pipeline</h1>
+          <p class="meta" id="project-meta"></p>
+          <figure class="hero-media">
+            <div class="media-ph">Hero: chip layout (GDSII) screenshot</div>
+          </figure>
+          <p class="lead">As an undergraduate researcher at the University of Delaware, I implemented an open-source pipeline covering RTL-to-GDSII chip design, gate-level netlist activity simulation, dynamic power tracing, and side-channel analysis of cryptographic hardware.</p>
+        </div>
+        <!-- Filled in from js/data.js: key result, role, dates, tools -->
+        <aside class="glance" id="glance"></aside>
+      </div>
+
+      <article class="prose">
+        <h2>The problem</h2>
+          <p class="todo">Placeholder: what problem were you solving, and why did it matter?</p>
+
+        <h2>My approach</h2>
+          <ul>
+            <li>Built the flow with open-source tools: Yosys for synthesis, OpenROAD for place-and-route, and Icarus Verilog for simulation.</li>
+            <li>Optimized Python scripts that simulate dynamic power consumption, improving Pearson correlation coefficients in later correlation power analysis.</li>
+            <li>Extended the analysis beyond gate level with layout-level data for more accurate power simulation.</li>
+          </ul>
+          <figure>
+            <div class="media-ph">Pipeline diagram (RTL → GDSII → power → CPA)</div>
+            <figcaption>Caption for pipeline diagram (rtl → gdsii → power → cpa).</figcaption>
+          </figure>
+
+        <h2>Results</h2>
+          <ul>
+            <li>Ran the open-source flow in 16 hours, compared with 24 hours for commercial flows.</li>
+            <li>Produced more accurate power simulations and side-channel evaluations than the commercial gate-level flow.</li>
+          </ul>
+          <figure>
+            <div class="media-ph">Layout screenshot</div>
+            <figcaption>Caption for layout screenshot.</figcaption>
+          </figure>
+
+        <h2>What I learned</h2>
+          <p class="todo">Placeholder: 2–3 sentences on what you'd take into your next project.</p>
+
+        <h2>Gallery</h2>
+        <!-- Replace placeholders with <img src="../assets/images/..." alt="..."> — clicking enlarges them. -->
+        <div class="gallery">
+          <div class="media-ph">Simulated power trace</div>
+          <div class="media-ph">Correlation results plot</div>
+          <div class="media-ph">Additional photo</div>
+        </div>
+      </article>
+
+      <!-- Filled in from js/data.js: prev/next, related projects, context, contact -->
+      <section id="next-steps" aria-label="Where to next"></section>
+    </div>
+  </main>
+
+  <footer id="site-footer"></footer>
+</body>
+</html>
